@@ -152,13 +152,13 @@ P_NAME 		: TOK_ID
 				
 DEC_LIST 	: DEC
 			{
-				printf("1\n");
+				
 			}
 				
 		  	  |
 		   	  DEC_LIST';'DEC 
 		   	  {
-		   	  	printf("2\n");
+		   	  	
 
 		   	  }
 		   	
@@ -186,7 +186,7 @@ DEC    	 	: ID_LIST':'TYPE  //adaugam toate variabile coresp declaratiei in tabe
 						}
 						id = strtok(NULL, ",") ; 
 					}
-					printf("3\n");
+					
 
 
 				}
@@ -214,12 +214,12 @@ ID_LIST 	: TOK_ID
 
 STMT_LIST   : STMT
 				{
-					printf("4\n");
+					
 				}
 			  |
 			  STMT_LIST';'STMT 
 			  	{
-					printf("5\n");
+					
 				}
 			  |
 			  STMT_LIST error 
@@ -256,7 +256,7 @@ ASSIGN      : TOK_ID TOK_EQUALS EXP
 EXP			: EXP TOK_PLUS TERM
 			  {
 			  	$$=$1+$3 ;
-					printf("6\n");
+					
 
 			  }
 			  |
@@ -264,14 +264,14 @@ EXP			: EXP TOK_PLUS TERM
 			  EXP TOK_MINUS TERM
 			  {
 			  	$$=$1-$3 ; 
-			  	printf("7\n");
+			  	
 			  }
 			  
 			  |
 			  TERM
 			  {
 			  	$$=$1; 
-			  	printf("8\n");
+			  	
 			  }
 
 TERM 		:  TERM TOK_DIVIDE FACTOR
@@ -284,14 +284,14 @@ TERM 		:  TERM TOK_DIVIDE FACTOR
 					}
 					else
 						$$ = $1/$3; 
-					printf("9\n");
+					
 				}
 			 
 			  |
 			  TERM TOK_MULTIPLY FACTOR
 			  {
 			  	$$ = $1 *$3 ;
-			  	printf("10\n");
+			  	
 			  }
 
 			  |
@@ -309,7 +309,7 @@ INDEX_EXP 	: TOK_ID TOK_EQUALS EXP TOK_TO EXP
 						yyerror(msg);
 					 
 					}
-					printf("13 \n");
+					
 
 				}
 
@@ -324,14 +324,14 @@ FACTOR      : TOK_ID
 					}
 					else
 						$$  = ts->getValue($1) ; 
-					printf("11 %s\n",$1);
+					
 				}
 				
 			  | 
 			  TOK_INT
 			  {
 			   $$ = $1 ;
-			   printf("12 %d\n",$1);
+			   
 
 			  }
 			  
