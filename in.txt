@@ -1,0 +1,17 @@
+program Exemplu_1
+var 
+a1,a2, a3:integer ; 
+b1,b2, b3:integer 
+begin
+read(a1); 
+read(a2);
+a3:=a1+a2*a1-a2+a1-1-a2-2*3;
+b1:=2*a2;
+b3:=b1;
+for b2:=1 to b1 do
+begin
+b3:=1;
+b3:=b3-b2;
+end;
+write(b3)
+end.
